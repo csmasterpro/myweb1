@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio ครูมืออาชีพ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <style>
+        :root {
+            --primary-color: #8FBC8F;
+            --secondary-color: #98FB98;
+            --text-color: #2F4F4F;
+            --bg-color: #F0FFF0;
+            --max-width: 1000px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: var(--max-width);
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .slider-container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 400px;
+        }
+
+        .slider-container img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .nav-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        .profile {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .profile-content {
+            flex: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Portfolio ครูมืออาชีพ</h1>
+            <div class="slider-container">
+                <div class="slider">
+                    <div><img src="/api/placeholder/1000/400" alt="ภาพกิจกรรมการสอน 1"></div>
+                    <div><img src="/api/placeholder/1000/400" alt="ภาพกิจกรรมการสอน 2"></div>
+                    <div><img src="/api/placeholder/1000/400" alt="ภาพกิจกรรมการสอน 3"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <ul>
+                <li><a href="#profile">ประวัติส่วนตัว</a></li>
+                <li><a href="#education">ประวัติการศึกษา</a></li>
+                <li><a href="achievements.html">ผลงานทางวิชาการ</a></li>
+                <li><a href="#teaching">การจัดการเรียนการสอน</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="profile" class="section profile">
+            <img src="/api/placeholder/200/200" alt="รูปโปรไฟล์" class="profile-image">
+            <div class="profile-content">
+                <h2>ประวัติส่วนตัว</h2>
+                <p>ชื่อ-สกุล: [ชื่อ-นามสกุล]</p>
+                <p>ตำแหน่ง: ครูชำนาญการพิเศษ</p>
+                <p>วิชาที่สอน: [วิชา]</p>
+                <p>ประสบการณ์การสอน: [จำนวนปี] ปี</p>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2>ประวัติการศึกษา</h2>
+            <ul>
+                <li>ปริญญาโท: [สาขา] - [มหาวิทยาลัย]</li>
+                <li>ปริญญาตรี: [สาขา] - [มหาวิทยาลัย]</li>
+            </ul>
+        </section>
+
+        <section id="achievements-preview" class="section">
+            <h2>ผลงานทางวิชาการ</h2>
+            <p>ดูรายละเอียดผลงานทางวิชาการทั้งหมด ได้แก่ งานวิจัย นวัตกรรมการสอน และการพัฒนาสื่อการสอน</p>
+            <a href="achievements.html" class="btn">ดูผลงานทั้งหมด</a>
+        </section>
+
+        <section id="teaching" class="section">
+            <h2>การจัดการเรียนการสอน</h2>
+            <ul>
+                <li>แผนการจัดการเรียนรู้</li>
+                <li>วิธีการสอนแบบ Active Learning</li>
+                <li>การใช้เทคโนโลยีในการสอน</li>
+                <li>การวัดและประเมินผล</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>ติดต่อ</h2>
+            <p>โรงเรียน: [ชื่อโรงเรียน]</p>
+            <p>อีเมล: [อีเมล]</p>
+            <p>เบอร์โทรศัพท์: [เบอร์โทรศัพท์]</p>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = tns({
+                container: '.slider',
+                items: 1,
+                slideBy: 1,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayButtonOutput: false,
+                controls: true,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

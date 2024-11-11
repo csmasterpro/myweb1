@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลงานทางวิชาการ - Portfolio ครูมืออาชีพ</title>
+    <style>
+        :root {
+            --primary-color: #8FBC8F;
+            --secondary-color: #98FB98;
+            --text-color: #2F4F4F;
+            --bg-color: #F0FFF0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .tab-container {
+            margin-bottom: 2rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tab-button {
+            padding: 0.5rem 1rem;
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tab-button.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>ผลงานทางวิชาการ</h1>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="teacher-research.html">งานวิจัย</a></li>
+            <li><a href="#innovation">นวัตกรรมการสอน</a></li>
+            <li><a href="#materials">สื่อการสอน</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <a href="index.html" class="btn-back">← กลับหน้าหลัก</a>
+
+        <div class="section">
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="research">งานวิจัย</button>
+                    <button class="tab-button" data-tab="innovation">นวัตกรรมการสอน</button>
+                    <button class="tab-button" data-tab="materials">สื่อการสอน</button>
+                </div>
+
+                <div id="research" class="tab-content active">
+                    <h2>งานวิจัยในชั้นเรียน</h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <img src="/api/placeholder/400/200" alt="งานวิจัย 1" class="achievement-image">
+                            <h3>งานวิจัยเรื่องที่ 1</h3>
+                            <p>ปีการศึกษา: [ปี]</p>
+                            <div class="achievement-details">
+                                <h4>รายละเอียด</h4>
+                                <p>วัตถุประสงค์การวิจัย:</p>
+                                <ul>
+                                    <li>[วัตถุประสงค์ 1]</li>
+                                    <li>[วัตถุประสงค์ 2]</li>
+                                </ul>
+                                <p>ผลการวิจัย: [สรุปผล]</p>
+                            </div>
+                        </div>
+                        <!-- เพิ่มการ์ดงานวิจัยอื่นๆ ตามต้องการ -->
+                    </div>
+                </div>
+
+                <div id="innovation" class="tab-content">
+                    <h2>นวัตกรรมการสอน</h2>
+                    <div class

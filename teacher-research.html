@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>งานวิจัยในชั้นเรียน - Portfolio ครูมืออาชีพ</title>
+    <style>
+        :root {
+            --primary-color: #8FBC8F;
+            --secondary-color: #98FB98;
+            --text-color: #2F4F4F;
+            --bg-color: #F0FFF0;
+            --max-width: 1000px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            padding: 1.5rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 2rem;
+        }
+
+        .research-image {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            flex-shrink: 0;
+        }
+
+        .research-content {
+            flex: 1;
+        }
+
+        .research-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .research-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tag {
+            background-color: var(--secondary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .research-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--bg-color);
+            border-radius: 5px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .search-section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .filter-select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .research-card {
+                flex-direction: column;
+            }
+
+            .research-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .search-form {
+                flex-direction: column;
+            }
+
+            .filter-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>งานวิจัยในชั้นเรียน</h1>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <ul>
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="#research">งานวิจัยทั้งหมด</a></li>
+                <li><a href="#statistics">สถิติงานวิจัย</a></li>
+                <li><a href="#publications">การเผยแพร่</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="index.html" class="btn-back">← กลับหน้าหลัก</a>
+
+        <section class="search-section">
+            <h2>ค้นหางานวิจัย</h2>
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="ค้นหาด้วยชื่องานวิจัย...">
+                <button type="submit" class="search-button">ค้นหา</button>
+            </form>
+          
+            <div class="filter-options">
+                <select class="filter-select">
+                    <option value="">ปีการศึกษา</option>
+                    <option value="2567">2567</option>
+                    <option value="2566">2566</option>
+                    <option value="2565">2565</option>
+                </select>
+                <select class="filter-select">
+                    <option value="">ประเภทงานวิจัย</option>
+                    <option value="classroom">วิจัยในชั้นเรียน</option>
+                    <option value="experimental">วิจัยเชิงทดลอง</option>
+                    <option value="development">วิจัยและพัฒนา</option>
+                </select>
+            </div>
+        </section>
+
+        <article class="research-card">
+            <img src="/api/placeholder/300/200" alt="ภาพงานวิจัย 1" class="research-image">
+            <div class="research-content">
+                <h2>การพัฒนาผลสัมฤทธิ์ทางการเรียนโดยใช้ชุดกิจกรรมการเรียนรู้</h2>
+                <div class="research-meta">
+                    <p>ปีการศึกษา: 2566 | ระยะเวลาวิจัย: 1 ภาคเรียน</p>
+                </div>
+                <div class="research-tags">
+                    <span class="tag">วิจัยในชั้นเรียน</span>
+                    <span class="tag">การพัฒนาผลสัมฤทธิ์</span>
+                </div>
+                <p>วัตถุประสหกฟหกเฟหกเฟหกเฟหเกฟหเงค์การวิจัย:</p>
+                <ul>
+                    <li>เพื่อพัฒนาผลสัมฤทธิ์ทางการเรียน</li>
+                    <li>เพื่อศึกษาความพึงพอใจของนักเรียน</li>
+                </ul>
+                <div class="research-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">85%</div>
+                        <div>ผลสัมฤทธิ์ที่เพิ่มขึ้น</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">45</div>
+                        <div>จำนวนนักเรียน</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.5</div>
+                        <div>ความพึงพอใจเฉลี่ย</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="research-card">
+            <img src="/api/placeholder/300/200" alt="ภาพงานวิจัย 2" class="research-image">
+            <div class="research-content">
+                <h2>การใช้เทคโนโลยี AR เพื่อพัฒนาทักษะการเรียนรู้</h2>
+                <div class="research-meta">
+                    <p>ปีการศึกษา: 2565 | ระยะเวลาวิจัย: 2 ภาคเรียน</p>
+                </div>
+                <div class="research-tags">
+                    <span class="tag">วิจัยเชิงทดลอง</span>
+                    <span class="tag">เทคโนโลยี AR</span>
+                </div>
+                <p>วัตถุประสงค์การวิจัย:</p>
+                <ul>
+                    <li>เพื่อพัฒนาสื่อการเรียนรู้ด้วยเทคโนโลยี AR</li>
+                    <li>เพื่อศึกษาผลการใช้สื่อ AR ในการเรียนการสอน</li>
+                </ul>
+                <div class="research-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">90%</div>
+                        <div>ประสิทธิภาพของสื่อ</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">38</div>
+                        <div>จำนวนนักเรียน</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8</div>
+                        <div>ความพึงพอใจเฉลี่ย</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
